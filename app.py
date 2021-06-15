@@ -26,4 +26,6 @@ for link in links:
             date_visite = str(l).split("place ")[1].split("<")[0]
     type = s.find('a')
 
-    print(data)
+    # print(data)
+
+    print(price, date_visite)
