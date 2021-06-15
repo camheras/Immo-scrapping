@@ -20,12 +20,12 @@ for link in links:
     s = BeautifulSoup(req.text, 'html.parser')
     # print(s)
     data = s.findAll('b')
-    price = s.find('b', style="color:#C85E2C;").text
+    prix = s.find('b', style="color:#C85E2C;").text
     for l in data:
         if l.find(text=re.compile("Visite")):
             date_visite = str(l).split("place ")[1].split("<")[0]
-    type = s.find('a')
+        if l.find(text=re.compile("/ 45 -")):
+            type = str(l.text)
 
-    # print(data)
+    print(type, prix, date_visite)
 
-    print(price, date_visite)
